@@ -3,7 +3,7 @@ from .models import *
 from django.contrib import messages
 import datetime #added for date
 from django.db.models import Sum
-
+from django.db.models import Count  #added to sum
 
 def index(request):
     if 'user_id' in request.session:
@@ -64,6 +64,8 @@ def dashboard(request):
                 'date':now,
                 'weights':Weight.objects.all(),
                 'exercises':Exercise.objects.filter(date_done=now),
+                'food_cals': Food.objects.aggregate(total_cals=Sum('food_calories')),
+                'exer_cals': Exercise.objects.aggregate(total_cals=Sum('exer_calories')),
             }
         return render(request, 'dashboard.html', context)
     return redirect('/')
@@ -114,6 +116,7 @@ def remove_meal(request, meal_id):
 def remove_exercise(request, exercise_id):
     exercise_to_remove= Exercise.objects.get(id=exercise_id)
     exercise_to_remove.delete()
+
     return redirect('/dashboard')
 
 def profile(request):

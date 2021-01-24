@@ -54,7 +54,7 @@ class Food(models.Model):
 
 class Exercise(models.Model):
     exercise_name = models.CharField(max_length=255)
-    exer_calories = models.IntegerField()
+    exer_calories = models.IntegerField(default=0)
     exerciser= models.ForeignKey(User, on_delete=models.CASCADE)
     date_done = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)

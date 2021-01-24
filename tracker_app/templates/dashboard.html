@@ -43,12 +43,9 @@
         </div>
 
         <div id="calorie_tracker">
-            <h2>Calories:</h2>
-            {% for meal in meals %}
-                <p>Food: {{meal.meal.food_calories}} </p>
-            {% endfor %}
-            <p>Exercise: (calorie sum)</p>
-            <p>Net Calories:(difference in calorie sums)</p>
+            <h2>Total Calories:</h2>
+            <p><strong>Food</strong>: {{food_cals.total_cals}} calories</p>
+            <p><strong>Exercise</strong>: {{exer_cals.total_cals}} calories</p>
         </div>
 
         <div class="logs">
