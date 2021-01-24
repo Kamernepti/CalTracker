@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <div id ="wrapper">
+        <div id="nav_bar">
+            <h1>{{user.first_name}}'s Profile</h1>
+            <a href="/dashboard">Dashboard  |</a>
+            <a href="/forum">Forum  |</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+        <div id="personal_info">
+            <img src="../images/Lara.jpg" alt="profile_picture">
+        </div>
+        <div id="activity_log"></div>
+        <div id="calorie_tracker"></div>
+        <div id="weight_tracker"></div>
+        <div id="friends"></div>
+        <div id="today's food"></div>
+        
+    </div>
+</body>
+</html>

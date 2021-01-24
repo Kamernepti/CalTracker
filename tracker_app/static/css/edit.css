@@ -1,0 +1,100 @@
+body {
+    background-color: rgb(78, 78, 78);
+}
+
+#wrapper{
+    width: 950px;
+    background-color: rgb(190, 190, 190);
+    border: 5px groove  rgb(133, 133, 133);
+}
+
+#nav_bar {
+    background-color: rgb(143, 143, 197);
+    height: 50px;
+}
+
+#nav_bar > h1 {
+    display: inline-block;
+    margin-right: 550px;
+    font-size: 20px;
+    margin-left: 20px;
+    font-size: 22px;
+}
+
+
+#nav_bar > a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+}
+
+#add_food {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 25px;
+}
+
+/* This isn't showing up for some reason */
+#add_food > h2 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    border-radius: 25px;
+}
+
+#add_food > form > p{
+    font-family: sans-serif;
+}
+
+#add_food > form > input{
+    width: 150px;
+}
+
+#add_food > form > button {
+    display:block;
+    background-color: gray;
+    color: white;
+    margin-top: 20px;
+    margin-left: 200px;
+    border-radius: 5px;
+}
+
+#add_exercise {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 25px;
+}
+
+#add_exercise > h2 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    border-radius: 25px;
+}
+
+#add_exercise > form > p {
+    font-family: sans-serif;
+}
+
+#add_exercise > form > input {
+    width: 150px;
+}
+
+#add_exercise > form > button {
+    display:block;
+    background-color: gray;
+    color: white;
+    margin-top: 20px;
+    margin-left: 200px;
+    border-radius: 5px;
+}

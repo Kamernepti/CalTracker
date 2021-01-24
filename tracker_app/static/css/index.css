@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(78, 78, 78);
+}
+
+#wrapper{
+    width: 950px;
+    background-color: rgb(190, 190, 190);
+    border: 5px groove  rgb(133, 133, 133);
+}
+
+#nav_bar {
+    background-color: rgb(143, 143, 197);
+    height: 50px;
+}
+
+#nav_bar > h1 {
+    display: inline-block;
+    margin-right: 600px;
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+#nav_bar > a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+}
+
+#header {
+    width: 875px;
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.header_block {
+    display: inline-block;
+    width: 225px;
+    background-color: gray;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.header_block > h3 {
+    text-align: center;
+}
+
+#stats {
+    display: inline-block;
+    width: 405px;
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#game {
+    display: inline-block;
+    width: 405px;
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 25px;
+}

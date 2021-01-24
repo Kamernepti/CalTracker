@@ -1,0 +1,157 @@
+body {
+    background-color: rgb(78, 78, 78);
+}
+
+#wrapper{
+    width: 950px;
+    background-color: rgb(190, 190, 190);
+    border: 5px groove rgb(133, 133, 133);
+}
+
+#nav_bar {
+    background-color: rgb(143, 143, 197);
+    height: 50px;
+}
+
+#nav_bar > h1 {
+    display: inline-block;
+    margin-right: 400px;
+    font-size: 20px;
+    margin-left: 20px;
+    font-size: 22px;
+}
+
+#nav_bar > a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+}
+
+#header {
+    border-radius: 25px;
+    background-color: white;
+    margin: 10px;
+    padding-left: 30px;
+    height: 40px;
+}
+
+#header > h2 {
+    font-weight: bolder;
+    display:inline;
+    margin:10px;
+}
+
+.day_button {
+    display:inline;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
+
+.logs {
+    width: 500px;
+    display: inline-block;
+    background-color: white;
+    vertical-align: top;
+    padding: 5px;
+    margin: 10px;
+    height: 125px;
+    border-radius: 25px;
+}
+
+.logs > h3 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    border-radius: 25px;
+}
+
+.logs a {
+    color: black;
+}
+
+.remove {
+    color:black;
+}
+
+#calorie_tracker {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+}
+
+#calorie_tracker > h2 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#calorie_tracker > p {
+    margin-left: 20px;
+}
+
+#weight_tracker {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+}
+
+#weight_tracker > h3 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#weight_tracker > p {
+    margin-left: 20px;
+}
+
+#weight_tracker > form > input {
+    width: 50px;
+    display: inline;
+}
+
+#weight_tracker > form > button {
+    display: inline;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
+
+#weight_tracker > form > p {
+    margin-left: 20px;
+    display: inline;
+}
+
+#activity_log > h4 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#activity_log {
+    width: 300px;
+    display: inline-block;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+}
