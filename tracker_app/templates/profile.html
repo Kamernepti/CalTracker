@@ -17,14 +17,50 @@
         </div>
 
         <div id="personal_info">
-            <img src="../images/Lara.jpg" alt="profile_picture">
+            <p>User image</p>
         </div>
-        <div id="activity_log"></div>
-        <div id="calorie_tracker"></div>
-        <div id="weight_tracker"></div>
+
+        <div id="today_food">
+            <h3>Today's Food: </h3>
+            {% for meal in meals %}
+                {% if meal.eater == user %}
+                    <p> <a href="/meals/{{meal.id}}/destroy" >Remove</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div id="activity_log">
+            <h4>Activity Log:</h4>
+            <ul>
+                <!-- The activities are not loading correctly- it breaks -->
+                <li> </li>
+            </ul>
+        </div>
+
+        <div id="calorie_tracker">
+            <h2>Today's Calories:</h2>
+            <p>Food: (calorie sum) </p>
+            <p>Exercise: (calorie sum)</p>
+            <p>Net Calories:(difference)</p>
+        </div>
+
+        <div id="weight_tracker">
+            <h3>Weight Tracker:</h3>
+            {% for weight in weights %}
+                {% if weight.weigher == user %}
+                    <p>Current Weight: {{weight.weigh_in}} </p>
+                {% endif %}
+            {% endfor %}
+            <form action="/add_weight" method="post">
+            {% csrf_token %}
+                <p>Update Weight (lbs): </p>
+                <input type="number" name="weight" width="100">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
         <div id="friends"></div>
-        <div id="today's food"></div>
-        
+
     </div>
 </body>
 </html>

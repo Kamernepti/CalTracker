@@ -21,9 +21,16 @@
         </div>
 
         <div id="header">
-            <button class="day_button"> Prev.</button>
+            <form action="/dashboard/prev_date" method="post">
+            {% csrf_token %}
+                <button class="day_button"> Prev.</button>
+            </form>
+
             <h2>{{date}} </h2>
-            <button class="day_button">Next </button>
+            <form action="/dashboard/next_date" method="post">
+            {% csrf_token %}
+                <button class="day_button">Next </button>
+            </form>
         </div>
 
         <div class="logs">
@@ -37,7 +44,9 @@
 
         <div id="calorie_tracker">
             <h2>Calories:</h2>
-            <p>Food: (calorie sum) </p>
+            {% for meal in meals %}
+                <p>Food: {{meal.meal.food_calories}} </p>
+            {% endfor %}
             <p>Exercise: (calorie sum)</p>
             <p>Net Calories:(difference in calorie sums)</p>
         </div>
@@ -78,8 +87,9 @@
         <div id="activity_log">
             <h4>Activity Log:</h4>
             <ul>
-                <!-- The activities are not loading correctly- it breaks -->
-                <li> </li>
+            {% for activity in request.session.activities %}
+                <li class="{{activity.activity_type}}">{{activity.message}}</li>
+            {% endfor %}
             </ul>
         </div>
 

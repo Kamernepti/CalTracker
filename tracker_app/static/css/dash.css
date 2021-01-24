@@ -41,6 +41,10 @@ body {
     margin:10px;
 }
 
+#header > form {
+    display: inline;
+}
+
 .day_button {
     display:inline;
     background-color: gray;

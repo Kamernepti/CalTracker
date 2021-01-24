@@ -52,6 +52,8 @@ def logout(request):
 
 def dashboard(request):
     now = datetime.date.today()
+    if 'activities' not in request.session:
+        request.session ['activities']=[]
     if 'user_id' in request.session:
         user=User.objects.filter(id=request.session['user_id'])
         if user:
@@ -72,6 +74,10 @@ def edit(request):
 
 def add_food(request):
     user = User.objects.get(id=request.session['user_id'])
+    #no error but message isn't showing up
+    message= "Added food to the log"
+    activity_type = "add_food"
+    request.session['activities'].append({'message':message, 'type':activity_type})
     if request.method == "POST":
         Food.objects.create(
             food_name= request.POST["food_name"],
@@ -111,11 +117,17 @@ def remove_exercise(request, exercise_id):
     return redirect('/dashboard')
 
 def profile(request):
+    now = datetime.date.today()
     if 'user_id' in request.session:
         user=User.objects.filter(id=request.session['user_id'])
         if user:
             context ={
                 'user': user[0],
+                'meals': Meal.objects.filter(date_eaten=now),
+                'foods': Food.objects.all(),
+                'date':now,
+                'weights':Weight.objects.all(),
+                'exercises':Exercise.objects.filter(date_done=now),
             }
         return render(request, 'profile.html', context)
     return redirect('/')
@@ -136,4 +148,10 @@ def add_message(request):
     pass
 
 def add_comment(request):
+    pass
+
+def prev_date(request):
+    pass
+
+def next_date(request):
     pass

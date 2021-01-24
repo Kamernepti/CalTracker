@@ -25,3 +25,112 @@ body {
     text-decoration: none;
     color: white;
 }
+
+#personal_info {
+    outline: 2px solid black;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    margin: 10px;
+}
+
+#calorie_tracker {
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+}
+
+#calorie_tracker > h2 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#calorie_tracker > p {
+    margin-left: 20px;
+}
+
+#weight_tracker {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+}
+
+#weight_tracker > h3 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#weight_tracker > p {
+    margin-left: 20px;
+}
+
+#weight_tracker > form > input {
+    width: 50px;
+    display: inline;
+}
+
+#weight_tracker > form > button {
+    display: inline;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
+
+#weight_tracker > form > p {
+    margin-left: 20px;
+    display: inline;
+}
+
+#activity_log > h4 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#activity_log {
+    width: 250px;
+    display: inline-block;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+}
+
+#today_food> h3 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 5px 5px 5px;
+    margin: 0 10px 10px 10px;
+    vertical-align: top;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#today_food {
+    width: 400px;
+    display: inline-block;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
