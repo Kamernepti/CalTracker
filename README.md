@@ -15,4 +15,4 @@ Next functionality:
 - blog section with blogs viewable by all users
 - edit feature added to the dashboard for food and exercise
 
-<img src="CalTracker/images/project_dashboard" width="350" title="dashboard">
+![project_dashboard](https://user-images.githubusercontent.com/69065554/105789715-c8b3d200-5f37-11eb-9f92-38ef25fa24a1.jpg)
