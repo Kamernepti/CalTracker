@@ -15,4 +15,4 @@ Next functionality:
 - blog section with blogs viewable by all users
 - edit feature added to the dashboard for food and exercise
 
-![images](images.project_dashboard.jpg)
+<img src="images/project_dashboard" width="350" title="dashboard">
