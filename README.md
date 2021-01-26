@@ -16,3 +16,4 @@ Next functionality:
 - edit feature added to the dashboard for food and exercise
 
 ![project_dash_lara](https://user-images.githubusercontent.com/69065554/105789802-ef720880-5f37-11eb-86b9-0804b560a690.jpg)
+![project_login](https://user-images.githubusercontent.com/69065554/105789870-0a447d00-5f38-11eb-8b35-be2e10adc950.jpg)
