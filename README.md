@@ -14,3 +14,5 @@ Next functionality:
 - forum that allows users to post messages and comments viewable by other users
 - blog section with blogs viewable by all users
 - edit feature added to the dashboard for food and exercise
+
+![images](images.project_dashboard.jpg)
