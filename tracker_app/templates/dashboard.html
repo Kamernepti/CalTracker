@@ -36,8 +36,8 @@
         <div class="logs">
             <h3>Breakfast: </h3>
             {% for meal in meals %}
-                {% if meal.meal_tag == "breakfast" and meal.eater == user %}
-                    <p> <a href="/meals/{{meal.id}}/destroy" >Remove</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                {% if meal.meal_tag == "breakfast" %}
+                    <p><a href="/meals/{{meal.id}}/destroy" >Remove | </a> <a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
                 {% endif %}
             {% endfor %}
         </div>
@@ -51,8 +51,8 @@
         <div class="logs">
             <h3>Lunch:</h3>
             {% for meal in meals %}
-                {% if meal.meal_tag == "lunch" and meal.eater == user %}
-                <p> <a href="/meals/{{meal.id}}/destroy">Remove</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                {% if meal.meal_tag == "lunch" %}
+                <p> <a href="/meals/{{meal.id}}/destroy">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
                 {% endif %}
             {% endfor %}
         </div>
@@ -64,6 +64,7 @@
                     <p>Current Weight: {{weight.weigh_in}} </p>
                 {% endif %}
             {% endfor %}
+            <p>{{last_weight}}</p>
             <form action="/add_weight" method="post">
             {% csrf_token %}
                 <p>Update Weight (lbs): </p>
@@ -75,8 +76,8 @@
         <div class="logs">
             <h3>Dinner:</h3>
             {% for meal in meals %}
-                {% if meal.meal_tag == "dinner" and meal.eater == user %}
-                <p> <a href="/meals/{{meal.id}}/destroy" class="remove_link">Remove</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                {% if meal.meal_tag == "dinner" %}
+                <p> <a href="/meals/{{meal.id}}/destroy" class="remove_link">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
                 {% endif %}
             {% endfor %}
         </div>
@@ -93,8 +94,8 @@
         <div class="logs">
             <h3>Snacks:</h3>
             {% for meal in meals %}
-                {% if meal.meal_tag == "snack" and meal.eater == user %}
-                <p> <a href="/meals/{{meal.id}}/destroy" class="remove_link">Remove</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                {% if meal.meal_tag == "snack" %}
+                <p> <a href="/meals/{{meal.id}}/destroy" class="remove_link">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
                 {% endif %}
             {% endfor %}
         </div>

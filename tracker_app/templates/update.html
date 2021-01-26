@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/update.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="nav_bar">
+            <h1>Additions</h1>
+            <a href="/profile">Profile  |</a>
+            <a href="/dashboard">Dashboard  |</a>
+            <a href="/forum">Forum  |</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+        <div id="add_food">
+            <form action="/meals/{{meal.id}}/update" method="post">
+            {% csrf_token %}
+                <p>  Food Name:</p>
+                <input type="text" name="food_name" placeholder="{{meal.food_name}}">
+
+                <p>Calories (per serving):</p>
+                <input type="number" name="calories">
+
+                <p>Fat (grams):</p>
+                <input type="number" name="fat">
+
+                <p>Carbohydrates (grams):</p>
+                <input type="number" name="carbs">
+
+                <p>Protein (grams):</p>
+                <input type="number" name="protein">
+
+                <p>Meal:</p>
+                <select name = "meal_tag">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snacks</option>
+                </select>
+
+                <button type="submit">Update </button>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

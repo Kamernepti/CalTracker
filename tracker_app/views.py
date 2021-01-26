@@ -59,13 +59,13 @@ def dashboard(request):
         if user:
             context ={
                 'user': user[0],
-                'meals': Meal.objects.filter(date_eaten=now),
+                'meals': Meal.objects.filter(date_eaten=now, eater=request.session['user_id']),
                 'foods': Food.objects.all(),
                 'date':now,
                 'weights':Weight.objects.all(),
-                'exercises':Exercise.objects.filter(date_done=now),
-                'food_cals': Food.objects.aggregate(total_cals=Sum('food_calories')),
-                'exer_cals': Exercise.objects.aggregate(total_cals=Sum('exer_calories')),
+                'exercises':Exercise.objects.filter(date_done=now, exerciser=request.session['user_id']),
+                'food_cals': Meal.objects.filter(date_eaten=now, eater=request.session['user_id']).aggregate(total_cals=Sum('meal__food_calories')),
+                'exer_cals': Exercise.objects.filter(date_done=now, exerciser=request.session['user_id']).aggregate(total_cals=Sum('exer_calories')),
             }
         return render(request, 'dashboard.html', context)
     return redirect('/')
@@ -142,6 +142,31 @@ def add_weight(request):
             weigh_in= request.POST["weight"],
             weigher= user,
         )
+    return redirect('/dashboard')
+
+def edit_food(request, meal_id):
+    if 'user_id' in request.session:
+        user= User.objects.filter(id=request.session['user_id'])
+        if user:
+            context= {
+                "user": user[0],
+                "meals": Meal.objects.get(id=meal_id)
+            }
+    return render(request, 'update.html', context)
+
+def update_food(request, meal_id):
+    context= {
+        "meals": Meal.objects.get(id=meal_id)
+    }
+    if request.method=="POST":
+        newedit = Meal.objects.get(id=meal_id)
+        newedit.meal.food_name = request.POST["food_name"]
+        newedit.meal.food_calories = request.POST["calories"]
+        newedit.meal.fat= request.POST["fat"]
+        newedit.meal.carbs = request.POST["carbs"]
+        newedit.meal.protein = request.POST["protein"]
+        newedit.meal_tag= request.POST["meal_tag"]
+        newedit.save()
     return redirect('/dashboard')
 
 def forum(request):
