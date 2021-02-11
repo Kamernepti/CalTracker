@@ -1,24 +1,115 @@
+/* Table of contents
+1.global styles
+2. typography
+3. components 
+    3.1 header form
+    3.2 day button
+    3.3 P-tags
+    3.4 weight tracker form input.
+    3.5 weight tracker button
+    3.6 remove link
+
+*/
+
+/* 
+==============
+global styles
+==============
+  */
+
+:root{
+    font-size: 1 em; 
+}
+
 body {
     background-color: rgb(78, 78, 78);
 }
 
 #wrapper{
-    width: 950px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    width: 95%;
+    margin: auto;
     background-color: rgb(190, 190, 190);
-    border: 5px groove rgb(133, 133, 133);
+    border: .4rem groove rgb(133, 133, 133);
 }
 
 #nav_bar {
     background-color: rgb(143, 143, 197);
-    height: 50px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    max-width: 90%;
 }
+
+#header {
+    border-radius: 1rem;
+    background-color: white;
+    margin: .75rem;
+    padding-left: 2rem;
+    height: 2.5rem;
+    max-width: 90%;
+}
+
+.logs {
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    vertical-align: top;
+    padding: .4rem;
+    margin: .75rem;
+    height: 7rem;
+    border-radius: 1rem;
+}
+
+#calorie_tracker {
+    max-width: 90%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: .4rem;
+    margin: .75rem;
+    border-radius: 1rem;
+}
+
+#weight_tracker {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: .4rem;
+    margin: .75rem;
+    border-radius: 1rem;
+}
+
+
+#activity_log {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: .4rem;
+    margin: .75rem;
+    border-radius: 1rem;
+}
+
+
+/* 
+==============
+typography
+==============
+  */
 
 #nav_bar > h1 {
     display: inline-block;
-    margin-right: 400px;
-    font-size: 20px;
-    margin-left: 20px;
-    font-size: 22px;
+    font-size: 1.5rem;
 }
 
 #nav_bar > a {
@@ -27,19 +118,58 @@ body {
     color: white;
 }
 
-#header {
-    border-radius: 25px;
-    background-color: white;
-    margin: 10px;
-    padding-left: 30px;
-    height: 40px;
-}
-
 #header > h2 {
     font-weight: bolder;
     display:inline;
-    margin:10px;
+    margin:.75rem;
 }
+
+.logs > h3 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 .4rem .4rem .4rem;
+    margin: 0 .75rem .75rem .75rem;
+    vertical-align: top;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+
+.logs a {
+    color: black;
+}
+
+#calorie_tracker > h2 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 .4rem .4rem .4rem;
+    margin: 0 .75rem .75rem .75rem;
+    vertical-align: top;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+#weight_tracker > h3 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 .4rem .4rem .4rem;
+    margin: 0 .75rem .75rem .75rem;
+    vertical-align: top;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+#activity_log > h4 {
+    background-color: rgb(201, 200, 200);
+    padding: 0 .4rem .4rem .4rem;
+    margin: 0 .75rem .75rem .75rem;
+    vertical-align: top;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+/* 
+==============
+components 
+==============
+  */ 
+
 
 #header > form {
     display: inline;
@@ -52,81 +182,25 @@ body {
     border-radius: 5px;
 }
 
-.logs {
-    width: 500px;
-    display: inline-block;
-    background-color: white;
-    vertical-align: top;
-    padding: 5px;
-    margin: 10px;
-    height: 125px;
-    border-radius: 25px;
-}
-
-.logs > h3 {
-    background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    border-radius: 25px;
-}
-
-.logs a {
-    color: black;
-}
-
-.remove {
-    color:black;
-}
-
-#calorie_tracker {
-    width: 300px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 25px;
-}
-
-#calorie_tracker > h2 {
-    background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    font-size: 18px;
-    border-radius: 25px;
-}
-
 #calorie_tracker > p {
-    margin-left: 20px;
-}
-
-#weight_tracker {
-    width: 300px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 25px;
-}
-
-#weight_tracker > h3 {
-    background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    font-size: 18px;
-    border-radius: 25px;
+    margin-left: 1.25rem;
 }
 
 #weight_tracker > p {
-    margin-left: 20px;
+    margin-left: 1.25rem;
+}
+
+#weight_tracker > p {
+    margin-left: 1.25rem;
+}
+
+#weight_tracker > form > p {
+    margin-left: 1.25rem;
+    display: inline;
 }
 
 #weight_tracker > form > input {
-    width: 50px;
+    width: 3.12rem;
     display: inline;
 }
 
@@ -134,28 +208,9 @@ body {
     display: inline;
     background-color: gray;
     color: white;
-    border-radius: 5px;
+    border-radius: .4rem;
 }
 
-#weight_tracker > form > p {
-    margin-left: 20px;
-    display: inline;
-}
-
-#activity_log > h4 {
-    background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    font-size: 18px;
-    border-radius: 25px;
-}
-
-#activity_log {
-    width: 300px;
-    display: inline-block;
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 25px;
+.remove {
+    color:black;
 }
