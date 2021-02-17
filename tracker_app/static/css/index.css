@@ -1,66 +1,132 @@
+/* Table of contents
+1.global styles
+2. typography
+3. components 
+    3.1 header blocks
+
+*/
+
+/* 
+==============
+global styles
+==============
+  */
+
+:root {
+    font-size: 1em;
+}
+
 body {
     background-color: rgb(78, 78, 78);
 }
 
 #wrapper{
-    width: 950px;
+    max-width: 95%;
+    width: 95%;
     background-color: rgb(190, 190, 190);
-    border: 5px groove  rgb(133, 133, 133);
+    border: .4rem groove  rgb(133, 133, 133);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* margin: auto; */
+    align-self: center;
 }
 
 #nav_bar {
     background-color: rgb(143, 143, 197);
-    height: 50px;
-}
-
-#nav_bar > h1 {
-    display: inline-block;
-    margin-right: 600px;
-    font-size: 22px;
-    margin-left: 20px;
-}
-
-#nav_bar > a {
-    display: inline;
-    text-decoration: none;
-    color: white;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: 100%;
 }
 
 #header {
-    width: 875px;
+    max-width: 90%;
+    width: 90%;
     background-color: white;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 25px;
+    margin: .75rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+#headerContainer{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: space-around;
 }
 
 .header_block {
-    display: inline-block;
-    width: 225px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    max-width: 70%;
+    width: 25%;
     background-color: gray;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 25px;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    margin: .7rem;
+}
+
+#stats {
+    display: flex;
+    flex-wrap: wrap;
+    width:90%;
+    max-width: 90%;
+    background-color: white;
+    margin: .75rem;
+    padding: .75rem;
+    border-radius: 1.5rem;
+    align-self: center;
+}
+
+#game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 90%;
+    align-self: center;
+    background-color: white;
+    margin: .75rem;
+    padding: .75rem;
+    border-radius: 1.5rem;
+}
+
+
+
+/* typography */
+
+
+#nav_bar > h1 {
+    display: flex;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+#nav_links>a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    margin:1rem;
+}
+
+#nav_links{
+    margin-left:auto;
+    align-self: center;
 }
 
 .header_block > h3 {
     text-align: center;
 }
 
-#stats {
-    display: inline-block;
-    width: 405px;
-    background-color: white;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 25px;
-}
+/* components  */
 
-#game {
-    display: inline-block;
-    width: 405px;
-    background-color: white;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 25px;
+.header_block:hover {
+    background-color: rgb(175, 175, 175);
 }
