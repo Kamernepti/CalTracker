@@ -3,6 +3,7 @@
 <head>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script defer src="{% static 'script/index.js' %}"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
@@ -20,7 +21,7 @@
                 <h2>Benefits of CalTracker</h2>
             <div id="headerContainer">
                 <div class= "header_block">
-                    <h3>Blogs</h3>
+                    <h3 id="community">Community</h3>
                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo laudantium tempora dolorum, vitae magni officiis illo culpa voluptatibus ipsa itaque. </p>
                 </div>
                 <div class= "header_block">
@@ -34,12 +35,25 @@
             </div>
         </div>
 
-        <div id= "game">
-            <h4>Game:</h4>
+        <div id= "quiz-container">
+            <div id = "question-container" class="hide">
+                <div id = "question">Question</div>
+                <div id="answer-buttons" class= "btn-grid">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+            </div>
+            <div class = "controls">
+                <button id="start-btn" class="start-btn btn">Test Your Knowledge</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+            </div>
         </div>
 
-        <div id="stats">
-            <h4>CalTracker Stats:</h4>
+
+        <div id="blogs">
+            <h4>Blogs: </h4>
         </div>
 
         
