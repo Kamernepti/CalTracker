@@ -41,9 +41,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    justify-content: flex-end;
-    padding: 1.5rem;
-    max-width: 90%;
+    /* padding: 1.5rem; */
+    max-width: 100%;
+}
+
+#nav_links {
+    display:flex;
+    justify-content: right;
+    margin: 1rem;
+    margin-left:auto;
+    align-self: center;
 }
 
 #header {
@@ -53,6 +60,8 @@ body {
     padding-left: 2rem;
     height: 2.5rem;
     max-width: 90%;
+    min-width: 85%;
+    align-self: center;
 }
 
 .logs {
@@ -89,6 +98,12 @@ body {
     border-radius: 1rem;
 }
 
+#update_weight{
+    background-color: rgb(218, 214, 214);
+    border-radius: 1rem;
+    padding: .5rem;
+}
+
 
 #activity_log {
     max-width: 90%;
@@ -100,6 +115,27 @@ body {
     border-radius: 1rem;
 }
 
+#column-container {
+    display:flex;
+    justify-content: center;
+}
+
+#left-column, #right-column {
+    display:flex;
+    flex-direction: column;
+    min-width: 40%;
+}
+
+footer {
+    background-color: rgb(34, 34, 34);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: 100%;
+    color: white;
+    justify-content: center;
+}
 
 /* 
 ==============
@@ -108,14 +144,16 @@ typography
   */
 
 #nav_bar > h1 {
-    display: inline-block;
+    display: flex;
+    align-self: flex-start;
     font-size: 1.5rem;
+    margin: 1rem;
 }
 
-#nav_bar > a {
-    display: inline;
+#nav_links>a {
     text-decoration: none;
     color: white;
+    margin:.25rem;
 }
 
 #header > h2 {
@@ -170,7 +208,6 @@ components
 ==============
   */ 
 
-
 #header > form {
     display: inline;
 }
@@ -194,17 +231,17 @@ components
     margin-left: 1.25rem;
 }
 
-#weight_tracker > form > p {
+#update_weight > form > p {
     margin-left: 1.25rem;
     display: inline;
 }
 
-#weight_tracker > form > input {
+#update_weight > form > input {
     width: 3.12rem;
     display: inline;
 }
 
-#weight_tracker > form > button {
+#update_weight > form > button {
     display: inline;
     background-color: gray;
     color: white;
@@ -214,3 +251,4 @@ components
 .remove {
     color:black;
 }
+

@@ -169,6 +169,20 @@ def update_food(request, meal_id):
         newedit.save()
     return redirect('/dashboard')
 
+def read_blogs(request):
+    return render(request, 'blogs.html')
+
+def add_blog(request):
+    return render(request, 'create_blog.html')
+
+def create_blog(request):
+    Blog.objects.create(
+        title = request.session['title'],
+        author = request.session['author'],
+        content= request.session['content'],
+    )
+    return redirect('/blogs')
+
 def forum(request):
     return render(request, 'forum.html')
 
@@ -183,3 +197,4 @@ def prev_date(request):
 
 def next_date(request):
     pass
+

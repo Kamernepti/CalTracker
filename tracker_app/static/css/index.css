@@ -75,10 +75,15 @@ body {
     margin: .7rem;
 }
 
+#module-container {
+    display: flex;
+    justify-content: center;
+}
+
 #blogs {
     display: flex;
     flex-wrap: wrap;
-    width:40%;
+    width:50%;
     max-width: 90%;
     background-color: white;
     margin: .75rem;
@@ -92,7 +97,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 40%;
+    width: 50%;
     max-width: 90%;
     background-color: white;
     margin: .75rem;
@@ -111,6 +116,52 @@ body {
     margin: 1rem;
     font-size: 1.25rem;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
+
+footer {
+    background-color: rgb(34, 34, 34);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: 100%;
+    color: white;
+    justify-content: center;
+}
+
+
+/* typography */
+
+
+#nav_bar > h1 {
+    display: flex;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+#nav_links>a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    margin:1rem;
+}
+
+#nav_links{
+    margin-left:auto;
+    align-self: center;
+}
+
+.header_block > h3 {
+    text-align: center;
+}
+
+/* components  */
+
+.header_block:hover {
+    background-color: rgb(175, 175, 175);
 }
 
 .btn-grid {
@@ -158,38 +209,4 @@ body {
 
 .btn.wrong {
     --hue: var(--hue-wrong);
-}
-
-
-
-/* typography */
-
-
-#nav_bar > h1 {
-    display: flex;
-    align-self: flex-start;
-    font-size: 1.5rem;
-    margin: 1rem;
-}
-
-#nav_links>a {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    margin:1rem;
-}
-
-#nav_links{
-    margin-left:auto;
-    align-self: center;
-}
-
-.header_block > h3 {
-    text-align: center;
-}
-
-/* components  */
-
-.header_block:hover {
-    background-color: rgb(175, 175, 175);
 }

@@ -13,11 +13,13 @@
     <div id="wrapper">
         <div id="nav_bar">
             <h1>Hello, {{user.first_name}}</h1>
-            <a href="/profile">Profile |</a>
-            <a href="/forum">Forum |</a>
-            <a href="/edit">Add Food |</a>
-            <a href="/edit">Add Exercise |</a>
-            <a href="/logout">Logout</a>
+            <div id="nav_links">
+                <a href="/profile">Profile |</a>
+                <a href="/forum">Forum |</a>
+                <a href="/edit">Add Food |</a>
+                <a href="/edit">Add Exercise |</a>
+                <a href="/logout">Logout</a>
+            </div>
         </div>
 
         <div id="header">
@@ -33,83 +35,98 @@
             </form>
         </div>
 
-        <div id="calorie_tracker">
-            <h2>Total Calories:</h2>
-            <p><strong>Food</strong>: {{food_cals.total_cals}} calories</p>
-            <p><strong>Exercise</strong>: {{exer_cals.total_cals}} calories</p>
-        </div>
+        <div id="column-container">
+            <div id = "left-column">
+                <div class="logs">
+                    <h3>Breakfast: </h3>
+                    {% for meal in meals %}
+                        {% if meal.meal_tag == "breakfast" %}
+                            <p><a href="/meals/{{meal.id}}/destroy" >Remove | </a> <a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
 
-        <div class="logs">
-            <h3>Breakfast: </h3>
-            {% for meal in meals %}
-                {% if meal.meal_tag == "breakfast" %}
-                    <p><a href="/meals/{{meal.id}}/destroy" >Remove | </a> <a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
-                {% endif %}
-            {% endfor %}
-        </div>
+                <div class="logs">
+                    <h3>Lunch:</h3>
+                    {% for meal in meals %}
+                        {% if meal.meal_tag == "lunch" %}
+                        <p> <a href="/meals/{{meal.id}}/destroy">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
 
-        <div class="logs">
-            <h3>Lunch:</h3>
-            {% for meal in meals %}
-                {% if meal.meal_tag == "lunch" %}
-                <p> <a href="/meals/{{meal.id}}/destroy">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
-                {% endif %}
-            {% endfor %}
-        </div>
-
-        <div class="logs">
-            <h3>Dinner:</h3>
-            {% for meal in meals %}
-                {% if meal.meal_tag == "dinner" %}
-                <p> <a href="/meals/{{meal.id}}/destroy" class="remove_link">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
-                {% endif %}
-            {% endfor %}
-        </div>
-
+                <div class="logs">
+                    <h3>Dinner:</h3>
+                    {% for meal in meals %}
+                        {% if meal.meal_tag == "dinner" %}
+                        <p> <a href="/meals/{{meal.id}}/destroy" class="remove_link">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
         
+                <div class="logs">
+                    <h3>Snacks:</h3>
+                    {% for meal in meals %}
+                        {% if meal.meal_tag == "snack" %}
+                        <p> <a href="/meals/{{meal.id}}/destroy" class="remove_link">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+        
+                <div class="logs">
+                    <h3>Exercise:</h3>
+                    {% for exercise in exercises %}
+                        {% if exercise.exerciser == user %}
+                            <p><a href="/exercises/{{exercise.id}}/destroy" class="remove_link">Remove</a> <strong>{{exercise.exercise_name}} </strong> : {{exercise.exer_calories}} calories</p>
+                        {% endif%}
+                    {% endfor %}
+                </div>
 
-        <div class="logs">
-            <h3>Snacks:</h3>
-            {% for meal in meals %}
-                {% if meal.meal_tag == "snack" %}
-                <p> <a href="/meals/{{meal.id}}/destroy" class="remove_link">Remove | </a><a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
-                {% endif %}
-            {% endfor %}
+            </div>
+
+            <div id="right-column">
+                <div id="calorie_tracker">
+                    <h2>Today's Calories:</h2>
+                    <p><strong>Food</strong>: {{food_cals.total_cals}} calories</p>
+                    <p><strong>Exercise</strong>: {{exer_cals.total_cals}} calories</p>
+                </div>
+
+                <div id="weight_tracker">
+                    <h3>Weight Tracker:</h3>
+                    <div id="current_weight">
+                        {% for weight in weights %}
+                            {% if weight.weigher == user %}
+                                <p>Current Weight: {{weight.weigh_in}} </p>
+                            {% endif %}
+                        {% endfor %}
+                        <p>{{last_weight}}</p>
+                    </div>
+                    <div id="update_weight">
+                        <form action="/add_weight" method="post">
+                        {% csrf_token %}
+                            <p>Update Weight (lbs): </p>
+                            <input type="number" name="weight" width="100">
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+        
+                <div id="activity_log">
+                    <h4>Activity Log:</h4>
+                    <ul>
+                    {% for activity in request.session.activities %}
+                        <li class="{{activity.activity_type}}">{{activity.message}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
         </div>
 
-        <div class="logs">
-            <h3>Exercise:</h3>
-            {% for exercise in exercises %}
-                {% if exercise.exerciser == user %}
-                    <p><a href="/exercises/{{exercise.id}}/destroy" class="remove_link">Remove</a> <strong>{{exercise.exercise_name}} </strong> : {{exercise.exer_calories}} calories</p>
-                {% endif%}
-            {% endfor %}
-        </div>
-
-        <div id="weight_tracker">
-            <h3>Weight Tracker:</h3>
-            {% for weight in weights %}
-                {% if weight.weigher == user %}
-                    <p>Current Weight: {{weight.weigh_in}} </p>
-                {% endif %}
-            {% endfor %}
-            <p>{{last_weight}}</p>
-            <form action="/add_weight" method="post">
-            {% csrf_token %}
-                <p>Update Weight (lbs): </p>
-                <input type="number" name="weight" width="100">
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-
-        <div id="activity_log">
-            <h4>Activity Log:</h4>
-            <ul>
-            {% for activity in request.session.activities %}
-                <li class="{{activity.activity_type}}">{{activity.message}}</li>
-            {% endfor %}
-            </ul>
-        </div>
+        <footer>
+            <p>footer here:</p>
+            <p>company icons-twitter, google, facebook. careers, about, etc.</p>
+        </footer>
 
     </div>
 </body>

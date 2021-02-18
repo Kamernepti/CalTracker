@@ -10,62 +10,71 @@
 <body>
     <div id="wrapper">
         <div id="nav_bar">
-            <h1>Additions</h1>
-            <a href="/profile">Profile  |</a>
-            <a href="/dashboard">Dashboard  |</a>
-            <a href="/forum">Forum  |</a>
-            <a href="/logout">Logout</a>
+            <h1>CalTracker</h1>
+            <div id="nav_links">
+                <a href="/profile">Profile  |</a>
+                <a href="/dashboard">Dashboard  |</a>
+                <a href="/forum">Forum  |</a>
+                <a href="/logout">Logout</a>
+            </div>
         </div>
 
-        <div id="add_food">
-            <h2>Add Food</h2>
-            <form action="/create_food" method="post">
-            {% csrf_token %}
-                <p>  Food Name:</p>
-                <input type="text" name="food_name">
+        <div id="add_container">
+            <div class="additions">
+                <h2>Add Food</h2>
+                <form action="/create_food" method="post" class="form">
+                {% csrf_token %}
+                    <p>  Food Name:</p>
+                    <input type="text" name="food_name">
 
-                <p>Calories (per serving):</p>
-                <input type="number" name="calories">
+                    <p>Calories (per serving):</p>
+                    <input type="number" name="calories">
 
-                <p>Fat (grams):</p>
-                <input type="number" name="fat">
+                    <p>Fat (grams):</p>
+                    <input type="number" name="fat">
 
-                <p>Carbohydrates (grams):</p>
-                <input type="number" name="carbs">
+                    <p>Carbohydrates (grams):</p>
+                    <input type="number" name="carbs">
 
-                <p>Protein (grams):</p>
-                <input type="number" name="protein">
+                    <p>Protein (grams):</p>
+                    <input type="number" name="protein">
 
-                <p>Meal:</p>
-                <select name = "meal_tag">
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snacks</option>
-                </select>
+                    <p>Meal:</p>
+                    <select name = "meal_tag">
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="snack">Snacks</option>
+                    </select>
 
-                <p>Date Eaten:</p>
-                <input type="Date" name="date_eaten">
+                    <p>Date Eaten:</p>
+                    <input type="Date" name="date_eaten">
 
-                <button type="submit">Add Food</button>
-            </form>
+                    <button type="submit">Add Food</button>
+                </form>
+            </div>
+            
+            <div class="additions">
+                <h2>Add Exercise</h2>
+                <form action="/add_exercise" method="post" class="form">
+                {% csrf_token %}
+                    <p>Type of Exercise:</p>
+                    <input type="text" name="exname">
+
+                    <p>Calories Burned:</p>
+                    <input type="number" name="excals">
+
+                    <p>Date of Exercise:</p>
+                    <input type="date" name="date_done">
+
+                    <button type="submit">Add Exercise</button>
+            </div>
         </div>
-        
-        <div id="add_exercise">
-            <h2>Add Exercise</h2>
-            <form action="/add_exercise" method="post">
-            {% csrf_token %}
-                <p>Type of Exercise:</p>
-                <input type="text" name="exname">
 
-                <p>Calories Burned:</p>
-                <input type="number" name="excals">
-
-                <p>Date of Exercise:</p>
-                <input type="date" name="date_done">
-
-                <button type="submit">Add Exercise</button>
-        </div>
+        <footer>
+            <p>footer here:</p>
+            <p>company icons-twitter, google, facebook. careers, about, etc.</p>
+        </footer>
     </div>
 </body>
 </html>

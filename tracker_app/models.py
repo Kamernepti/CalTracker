@@ -76,3 +76,10 @@ class Weight(models.Model):
     weigher=models.ForeignKey(User, related_name="user_weight", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Blog(models.Model):
+    title = models.CharField(max_length=150)
+    author = models.CharField(max_length=250)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

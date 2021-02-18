@@ -1,100 +1,128 @@
+/* Table of contents
+1.global styles
+2. typography
+3. components 
+    3.1 
+
+*/
+
+/* 
+==============
+global styles
+==============
+  */
+
+:root{
+    font-size: 1 em; 
+}
+
 body {
     background-color: rgb(78, 78, 78);
 }
 
 #wrapper{
-    width: 950px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    width: 95%;
+    margin: auto;
     background-color: rgb(190, 190, 190);
-    border: 5px groove  rgb(133, 133, 133);
+    border: .4rem groove rgb(133, 133, 133);
 }
 
 #nav_bar {
     background-color: rgb(143, 143, 197);
-    height: 50px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    /* padding: 1.5rem; */
+    max-width: 100%;
 }
+
+#nav_links {
+    display:flex;
+    justify-content: right;
+    margin: 1rem;
+    margin-left:auto;
+    align-self: center;
+}
+
+#add_container {
+    display: flex;
+    font-family: sans-serif;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.additions {
+    width: 40%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: .3rem;
+    margin: 1rem;
+    border-radius: 1.5rem;
+}
+
+.form {
+    display:flex;
+    flex-direction: column;
+    width: 90%;
+    margin: .5rem;
+}
+
+
+footer {
+    background-color: rgb(34, 34, 34);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: 100%;
+    color: white;
+    justify-content: center;
+}
+
+
+/* Typography */
 
 #nav_bar > h1 {
-    display: inline-block;
-    margin-right: 550px;
-    font-size: 20px;
-    margin-left: 20px;
-    font-size: 22px;
+    display: flex;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    margin: 1rem;
 }
 
-
-#nav_bar > a {
-    display: inline;
+#nav_links>a {
     text-decoration: none;
     color: white;
+    margin:.25rem;
 }
 
-#add_food {
-    width: 300px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: white;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 25px;
-}
-
-/* This isn't showing up for some reason */
-#add_food > h2 {
+.additions > h2 {
     background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
+    padding: 0 .3125rem .3125rem .3125rem;
+    margin: 0 .6rem .6rem .6rem;
     vertical-align: top;
-    border-radius: 25px;
+    border-radius: 1.5rem;
+    font-family: serif;
 }
 
-#add_food > form > p{
-    font-family: sans-serif;
+
+/* Components */
+
+.form input, select{
+    width: 60%;
 }
 
-#add_food > form > input{
-    width: 150px;
-}
-
-#add_food > form > button {
+.form > button {
     display:block;
     background-color: gray;
     color: white;
-    margin-top: 20px;
-    margin-left: 200px;
-    border-radius: 5px;
+    margin-top: 1.25rem;
+    border-radius: .3rem;
+    align-self: flex-end;
 }
 
-#add_exercise {
-    width: 300px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: white;
-    padding: 15px;
-    margin: 15px;
-    border-radius: 25px;
-}
-
-#add_exercise > h2 {
-    background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    border-radius: 25px;
-}
-
-#add_exercise > form > p {
-    font-family: sans-serif;
-}
-
-#add_exercise > form > input {
-    width: 150px;
-}
-
-#add_exercise > form > button {
-    display:block;
-    background-color: gray;
-    color: white;
-    margin-top: 20px;
-    margin-left: 200px;
-    border-radius: 5px;
-}
