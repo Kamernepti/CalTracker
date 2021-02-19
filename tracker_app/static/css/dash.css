@@ -41,7 +41,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    /* padding: 1.5rem; */
     max-width: 100%;
 }
 
@@ -220,10 +219,6 @@ components
 }
 
 #calorie_tracker > p {
-    margin-left: 1.25rem;
-}
-
-#weight_tracker > p {
     margin-left: 1.25rem;
 }
 

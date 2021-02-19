@@ -9,58 +9,79 @@
 </head>
 <body>
     <div id ="wrapper">
+        
         <div id="nav_bar">
             <h1>{{user.first_name}}'s Profile</h1>
-            <a href="/dashboard">Dashboard  |</a>
-            <a href="/forum">Forum  |</a>
-            <a href="/logout">Logout</a>
+            <div id="nav_links">
+                <a href="/dashboard">Dashboard  |</a>
+                <a href="/blogs">Blogs  |</a>
+                <a href="/logout">Logout</a>
+            </div>
         </div>
 
-        <div id="personal_info">
-            <p>User image</p>
+        <div id="column_container">
+            <div id = "left_column">
+                <div id="personal_info">
+                    <img id="profile_pic" src="static/images/placeholder.jpg" alt="">
+                </div>
+
+                <div class="profile_bubble">
+                    <h3>Activity Log:</h3>
+                    <ul>
+                        <li> You did something today</li>
+                    </ul>
+                </div> 
+
+                <div class="profile_bubble">
+                    <h3>Friends List</h3>
+                    <ul>
+                        <li>Friend 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="right_column">
+                <div class="profile_bubble">
+                    <h3>Today's Food: </h3>
+                    {% for meal in meals %}
+                        {% if meal.eater == user %}
+                            <p><a href="/meals/{{meal.id}}/destroy" >Remove | </a> <a href="/meals/{{meal.id}}/edit" >Edit</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="profile_bubble">
+                    <h3>Today's Calories:</h3>
+                    <p><strong>Food</strong>: {{food_cals.total_cals}} calories</p>
+                    <p><strong>Exercise</strong>: {{exer_cals.total_cals}} calories</p>
+                </div>
+        
+                <div id="weight_tracker" class="profile_bubble">
+                    <h3>Weight Tracker:</h3>
+                    <div id="current_weight">
+                        {% for weight in weights %}
+                            {% if weight.weigher == user %}
+                                <p>Current Weight: {{weight.weigh_in}} </p>
+                            {% endif %}
+                        {% endfor %}
+                        <p>{{last_weight}}</p>
+                    </div>
+                    <div id="update_weight">
+                        <form action="/add_weight" method="post">
+                        {% csrf_token %}
+                            <p>Update Weight (lbs): </p>
+                            <input type="number" name="weight" width="100">
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div id="today_food">
-            <h3>Today's Food: </h3>
-            {% for meal in meals %}
-                {% if meal.eater == user %}
-                    <p> <a href="/meals/{{meal.id}}/destroy" >Remove</a><strong> {{meal.meal.food_name}} </strong> : {{meal.meal.food_calories}} calories</p>
-                {% endif %}
-            {% endfor %}
-        </div>
-
-        <div id="activity_log">
-            <h4>Activity Log:</h4>
-            <ul>
-                <!-- The activities are not loading correctly- it breaks -->
-                <li> </li>
-            </ul>
-        </div>
-
-        <div id="calorie_tracker">
-            <h2>Today's Calories:</h2>
-            <p>Food: (calorie sum) </p>
-            <p>Exercise: (calorie sum)</p>
-            <p>Net Calories:(difference)</p>
-        </div>
-
-        <div id="weight_tracker">
-            <h3>Weight Tracker:</h3>
-            {% for weight in weights %}
-                {% if weight.weigher == user %}
-                    <p>Current Weight: {{weight.weigh_in}} </p>
-                {% endif %}
-            {% endfor %}
-            <form action="/add_weight" method="post">
-            {% csrf_token %}
-                <p>Update Weight (lbs): </p>
-                <input type="number" name="weight" width="100">
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-
-        <div id="friends"></div>
-
+        <footer>
+            <p>footer here:</p>
+            <p>company icons-twitter, google, facebook. careers, about, etc.</p>
+        </footer>
     </div>
 </body>
 </html>

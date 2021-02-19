@@ -1,136 +1,168 @@
+/* Table of contents
+1.global styles
+2. typography
+3. components 
+    3.1 profile Image
+    3.2 p-tags
+
+
+*/
+
+/* 
+==============
+global styles
+==============
+  */
+
+:root{
+    font-size: 1 em; 
+}
+
 body {
     background-color: rgb(78, 78, 78);
 }
 
 #wrapper{
-    width: 950px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    width: 95%;
+    margin: auto;
     background-color: rgb(190, 190, 190);
-    border: 5px groove  rgb(133, 133, 133);
+    border: .4rem groove rgb(133, 133, 133);
+    height: auto;
 }
 
 #nav_bar {
     background-color: rgb(143, 143, 197);
-    height: 50px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    max-width: 100%;
 }
 
-#nav_bar > h1 {
-    display: inline-block;
-    margin-right: 550px;
-    font-size: 22px;
-    margin-left: 20px;
+#nav_links {
+    display:flex;
+    justify-content: right;
+    margin: 1rem;
+    margin-left:auto;
+    align-self: center;
 }
 
-#nav_bar > a {
-    display: inline;
-    text-decoration: none;
-    color: white;
+#column_container {
+    display:flex;
+}
+
+#right_column, #left_column {
+    display:flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+#left_column {
+    max-width: 30%;
+}
+
+#right_column {
+    width: 70%;
+    max-width: 70%;
 }
 
 #personal_info {
-    outline: 2px solid black;
-    width: 200px;
-    height: 200px;
-    display: inline-block;
-    margin: 10px;
+    width: 100%;
+    display: flex;
+    margin: .6rem;
 }
 
-#calorie_tracker {
-    width: 250px;
+.profile_bubble{
+    width: 90%;
     display: inline-block;
-    vertical-align: top;
     background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 25px;
+    padding: .4rem;
+    margin: .4rem;
+    border-radius: 1.5rem;
 }
 
-#calorie_tracker > h2 {
+#update_weight{
+    background-color: rgb(218, 214, 214);
+    border-radius: 1rem;
+    padding: .5rem;
+}
+
+footer {
+    background-color: rgb(34, 34, 34);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: 100%;
+    color: white;
+    justify-content: center;
+}
+
+/* 
+==============
+Typography
+==============
+*/
+
+#nav_bar > h1 {
+    display: flex;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+#nav_links>a {
+    text-decoration: none;
+    color: white;
+    margin:.25rem;
+}
+
+.profile_bubble h3 {
     background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    font-size: 18px;
-    border-radius: 25px;
+    padding: 0 .3rem .3rem .3rem;
+    margin: 0 .6rem .6rem .6rem;
+    font-size: 1.1rem;
+    border-radius: 1.5rem;
 }
 
-#calorie_tracker > p {
-    margin-left: 20px;
+/* 
+==============
+Components
+==============
+*/
+
+#profile_pic{
+    max-width: 75%;
 }
 
-#weight_tracker {
-    width: 300px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 25px;
+.profile_bubble p{
+    margin-left: 1.25rem;
 }
 
-#weight_tracker > h3 {
-    background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    font-size: 18px;
-    border-radius: 25px;
-}
-
-#weight_tracker > p {
-    margin-left: 20px;
-}
-
-#weight_tracker > form > input {
-    width: 50px;
+#update_weight > form > p {
+    margin-left: 1.25rem;
     display: inline;
 }
 
-#weight_tracker > form > button {
+#update_weight > form > input {
+    width: 3.12rem;
+    display: inline;
+}
+
+#update_weight > form > button {
     display: inline;
     background-color: gray;
     color: white;
-    border-radius: 5px;
+    border-radius: .4rem;
 }
 
-#weight_tracker > form > p {
-    margin-left: 20px;
-    display: inline;
-}
 
-#activity_log > h4 {
-    background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    font-size: 18px;
-    border-radius: 25px;
-}
 
-#activity_log {
-    width: 250px;
-    display: inline-block;
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 25px;
-}
 
-#today_food> h3 {
-    background-color: rgb(201, 200, 200);
-    padding: 0 5px 5px 5px;
-    margin: 0 10px 10px 10px;
-    vertical-align: top;
-    font-size: 18px;
-    border-radius: 25px;
-}
 
-#today_food {
-    width: 400px;
-    display: inline-block;
-    background-color: white;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 25px;
-    margin-left: 100px;
-    margin-top: 20px;
-}
+
+
+

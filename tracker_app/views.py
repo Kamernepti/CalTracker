@@ -126,11 +126,13 @@ def profile(request):
         if user:
             context ={
                 'user': user[0],
-                'meals': Meal.objects.filter(date_eaten=now),
+                'meals': Meal.objects.filter(date_eaten=now, eater=request.session['user_id']),
                 'foods': Food.objects.all(),
                 'date':now,
                 'weights':Weight.objects.all(),
-                'exercises':Exercise.objects.filter(date_done=now),
+                'exercises':Exercise.objects.filter(date_done=now, exerciser=request.session['user_id']),
+                'food_cals': Meal.objects.filter(date_eaten=now, eater=request.session['user_id']).aggregate(total_cals=Sum('meal__food_calories')),
+                'exer_cals': Exercise.objects.filter(date_done=now, exerciser=request.session['user_id']).aggregate(total_cals=Sum('exer_calories')),
             }
         return render(request, 'profile.html', context)
     return redirect('/')

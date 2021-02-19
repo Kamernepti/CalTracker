@@ -12,7 +12,6 @@ urlpatterns = [
     path('edit', views.edit),
     path('create_food', views.add_food),
     path('add_exercise', views.add_exercise),
-    path('forum', views.forum),
     path('profile', views.profile),
     path('add_weight', views.add_weight),
     path('meals/<int:meal_id>/destroy', views.remove_meal),
