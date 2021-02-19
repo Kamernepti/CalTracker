@@ -6,13 +6,17 @@ from django.db.models import Sum
 from django.db.models import Count  #added to sum
 
 def index(request):
+    # if 'user_id' in request.session:
+    #     user= User.objects.filter(id=request.session['user_id'])
+    #     if user:
+    #         return redirect('/dashboard')
+    return render(request, 'index.html')
+
+def login(request):
     if 'user_id' in request.session:
         user= User.objects.filter(id=request.session['user_id'])
         if user:
             return redirect('/dashboard')
-    return render(request, 'index.html')
-
-def login(request):
     if request.method =="GET":
         return render (request, 'login.html')
     if not User.objects.log_validation(request.POST['email'], request.POST['password']):
@@ -20,10 +24,13 @@ def login(request):
         return redirect('/login')
     user = User.objects.get(email=request.POST['email'])
     request.session['user_id']=user.id
-    messages.success(request, "You have successfully logged in")
     return redirect('/dashboard')
 
 def register(request):
+    if 'user_id' in request.session:
+        user= User.objects.filter(id=request.session['user_id'])
+        if user:
+            return redirect('/dashboard')
     if request.method == "GET":
         return redirect('/login')
     errors=User.objects.reg_validation(request.POST)
@@ -172,21 +179,27 @@ def update_food(request, meal_id):
     return redirect('/dashboard')
 
 def read_blogs(request):
-    return render(request, 'blogs.html')
-
-def add_blog(request):
-    return render(request, 'create_blog.html')
+    if 'user_id' in request.session:
+        user= User.objects.filter(id=request.session['user_id'])
+        if user:
+            context = {
+                "blogs": Blog.objects.all()
+            }
+            return render(request, 'blogs.html', context)
+    if request.method =="GET":
+        return render (request, 'login.html')
+    return redirect('/login')
 
 def create_blog(request):
-    Blog.objects.create(
-        title = request.session['title'],
-        author = request.session['author'],
-        content= request.session['content'],
-    )
+    if request.method == "POST":
+        Blog.objects.create(
+            title = request.POST['title'],
+            author = request.POST['author'],
+            content= request.POST['content'],
+        )
+    
     return redirect('/blogs')
 
-def forum(request):
-    return render(request, 'forum.html')
 
 def add_message(request):
     pass

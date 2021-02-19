@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogs</title>
@@ -8,11 +10,36 @@
 <body>
     <div id="wrapper">
         <div id="nav_bar">
-            <a  href="login">Login  |  Registration</a>
+            <h1>CalTracker</h1>
+            <div id="nav_links">
+                <a href="/profile">Profile |</a>
+                <a href="/dashboard">Dashboard |</a>
+                <a href="/logout">Logout</a>
+            </div>
         </div>
-        <div id="header"></div>
+        <div id="title">
+            <h1>Blog Posts</h1>
+        </div>
+
         <div id="blog-container">
-            <div class="blog-info"></div>
+            {% for blog in blogs %}
+                <div class="blog-info">
+                    <h2>{{blog.title}}</h2>
+                    <p>Author: {{blog.author}} </p>
+                    <p>Created: {{blog.created_at}}</p>
+                    <p>{{blog.content}}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div id="blog_form">
+            <form action="/create_blog" method="post">
+            {% csrf_token %}
+                <p>Title <input type="text" name="title"></p>
+                <p>Author <input type="text" name="author"></p>
+                <p>Content <input type="textarea" name="content"></p>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </body>

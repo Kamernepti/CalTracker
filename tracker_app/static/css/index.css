@@ -83,6 +83,7 @@ body {
 #blogs {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     width:50%;
     max-width: 90%;
     background-color: white;
@@ -158,6 +159,10 @@ footer {
     text-align: center;
 }
 
+#blogs a {
+    text-decoration: none;
+}
+
 /* components  */
 
 .header_block:hover {
@@ -209,4 +214,8 @@ footer {
 
 .btn.wrong {
     --hue: var(--hue-wrong);
+}
+
+.image {
+    max-width: 25%;
 }

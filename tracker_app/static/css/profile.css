@@ -30,7 +30,6 @@ body {
     margin: auto;
     background-color: rgb(190, 190, 190);
     border: .4rem groove rgb(133, 133, 133);
-    height: auto;
 }
 
 #nav_bar {
@@ -62,6 +61,7 @@ body {
 
 #left_column {
     max-width: 30%;
+    width: 30%;
 }
 
 #right_column {
@@ -70,14 +70,20 @@ body {
 }
 
 #personal_info {
-    width: 100%;
-    display: flex;
+    width: 95%;
     margin: .6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: .1rem solid gray;
+    border-radius: 1.5rem;
+    background: linear-gradient(to left, rgb(66, 66, 66), rgb(145, 145, 145));
 }
 
 .profile_bubble{
     width: 90%;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     background-color: white;
     padding: .4rem;
     margin: .4rem;
@@ -128,6 +134,14 @@ Typography
     border-radius: 1.5rem;
 }
 
+#personal_info p {
+    font-size: 1.5rem;
+    color: rgb(78, 78, 78);
+    text-shadow: .1rem .1rem white;
+}
+
+
+
 /* 
 ==============
 Components
@@ -135,7 +149,9 @@ Components
 */
 
 #profile_pic{
-    max-width: 75%;
+    max-width: 200px;
+    border: .2rem outset gray;
+    margin: .5rem;
 }
 
 .profile_bubble p{
@@ -159,10 +175,9 @@ Components
     border-radius: .4rem;
 }
 
-
-
-
-
+.link{
+    color:black;
+}
 
 
 

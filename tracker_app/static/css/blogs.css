@@ -1,0 +1,110 @@
+/* Table of contents
+1.global styles
+2. typography
+3. components 
+    3.1 header form
+    3.2 day button
+    3.3 P-tags
+    3.4 weight tracker form input.
+    3.5 weight tracker button
+    3.6 remove link
+
+*/
+
+/* 
+==============
+global styles
+==============
+  */
+
+:root{
+    font-size: 1 em; 
+}
+
+body {
+    background-color: rgb(78, 78, 78);
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    width: 95%;
+    margin: auto;
+    background-color: rgb(190, 190, 190);
+    border: .4rem groove rgb(133, 133, 133);
+}
+
+#nav_bar {
+    background-color: rgb(143, 143, 197);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    max-width: 100%;
+}
+
+#nav_links {
+    display:flex;
+    justify-content: right;
+    margin: 1rem;
+    margin-left:auto;
+    align-self: center;
+}
+
+#title {
+    display: flex;
+    border-radius: 1.5rem;
+    max-width: 75%;
+    width: 75%;
+    justify-content: center;
+    margin: 1rem;
+}
+
+#blog-container {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: .4rem;
+    margin: .75rem;
+    border-radius: 1rem;
+}
+
+/* 
+==============
+typography
+==============
+*/
+
+#nav_bar > h1 {
+    display: flex;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+#nav_links>a {
+    text-decoration: none;
+    color: white;
+    margin:.25rem;
+}
+
+#blog-container h2{
+    background-color: rgb(201, 200, 200);
+    padding: 0 .4rem .4rem .4rem;
+    margin: 0 .75rem .75rem .75rem;
+    vertical-align: top;
+    border-radius: 1rem;
+    font-size: 2rem;
+}
+
+/* 
+==============
+components 
+==============
+*/ 
+
+#blog-container  p {
+    margin: 1.25rem;
+}

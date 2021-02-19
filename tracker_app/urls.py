@@ -21,6 +21,5 @@ urlpatterns = [
     path('dashboard/prev_date', views.prev_date),
     path('dashboard/next_date', views.next_date),
     path('blogs', views.read_blogs),
-    path('add_blog', views.add_blog),
     path('create_blog', views.create_blog)
 ]
