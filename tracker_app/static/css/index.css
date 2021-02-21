@@ -14,8 +14,6 @@ global styles
 
 :root {
     font-size: 1em;
-    --hue-wrong: red;
-    --hue-correct: green;
 }
 
 body {
@@ -109,7 +107,7 @@ body {
 #question-container {
     max-width: 80%;
     width: 80%;
-    background-color: rgb(72, 178, 194);
+    background-color: rgb(144, 180, 185);
     border-radius: 1rem;
     padding: .75rem;
     box-shadow: 0 0 .5rem .2rem gray;
@@ -122,14 +120,15 @@ body {
 
 
 footer {
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(5, 5, 5);
     height: auto;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-items: baseline;
     width: 100%;
     color: white;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -177,11 +176,11 @@ footer {
 }
 
 .btn {
-    background-color: rgb(200, 223, 253);
+    background-color: rgb(190, 199, 211);
     border-radius: .5rem;
     color: black;
     outline: none;
-    border:.1rem solid rgb(200, 223, 253);
+    border:.1rem solid rgb(162, 163, 165);
     padding: .4rem .75rem;
 }
 
@@ -190,7 +189,7 @@ footer {
 }
 
 .start-btn, .next-btn{
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: .5rem;
     margin: .5rem;
     border: .025rem solid gray;
@@ -216,6 +215,6 @@ footer {
     --hue: var(--hue-wrong);
 }
 
-.image {
-    max-width: 25%;
+footer img {
+    max-width: 150px;
 }

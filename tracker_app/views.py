@@ -10,7 +10,10 @@ def index(request):
     #     user= User.objects.filter(id=request.session['user_id'])
     #     if user:
     #         return redirect('/dashboard')
-    return render(request, 'index.html')
+    context ={
+        'blogs':Blog.objects.all()
+    }
+    return render(request, 'index.html', context)
 
 def login(request):
     if 'user_id' in request.session:

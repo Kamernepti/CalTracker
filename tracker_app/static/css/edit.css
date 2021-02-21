@@ -75,16 +75,16 @@ body {
 
 
 footer {
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(5, 5, 5);
     height: auto;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-items: baseline;
     width: 100%;
     color: white;
     justify-content: center;
+    align-items: center;
 }
-
 
 /* Typography */
 
@@ -126,3 +126,6 @@ footer {
     align-self: flex-end;
 }
 
+footer img {
+    max-width: 150px;
+}

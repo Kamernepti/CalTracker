@@ -59,15 +59,21 @@
             </div>
 
 
-            <div id="blogs">
+            <div id="blogs"> 
                 <h4>Recent Blog Post for Members: </h4>
-                <p><img class="image" src="static/images/temp.png" alt=""><a href="#"> Lorem, ipsum dolor itts facere.</a></p>
+                    <ul>
+                    {% for blog in blogs %}
+                        <li>{{blog.title}} by {{blog.author}}</li>
+                    {% endfor %}
+                    </ul>
+                
             </div>
         </div>
 
         <footer>
-            <p>footer here:</p>
-            <p>company icons-twitter, google, facebook. careers, about, etc.</p>
+            <p>CalTracker</p>
+            <p>Member Resources | Connect with Us |  Our Team</p>
+            <img src="static/images/icons.jpg" alt="online_social_sites">
         </footer>
         
     </div>
