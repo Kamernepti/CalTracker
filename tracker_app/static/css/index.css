@@ -94,7 +94,7 @@ body {
 
 #img_container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #quiz-container {
