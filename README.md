@@ -18,7 +18,7 @@ Next functionality:
 - add comments section to blogs
 
 Index Page
-![IndexPage](https://user-images.githubusercontent.com/69065554/108612093-fa368680-7399-11eb-91e3-c9e79d4226bc.jpg)
+![IndexPage](https://user-images.githubusercontent.com/69065554/108781943-9047e980-751f-11eb-91dd-6f1e49383314.jpg)
 
 Dashboard
 ![dash](https://user-images.githubusercontent.com/69065554/108612129-75983800-739a-11eb-8cfb-b452fc63184c.jpg)
